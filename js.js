@@ -6,8 +6,8 @@ function start() { // Inicio da função start()
 	$("#fundoGame").append("<div id='inimigo1' class='anima2'></div>");
 	$("#fundoGame").append("<div id='inimigo2' ></div>");
 	$("#fundoGame").append("<div id='amigo' class='anima3'></div>");
-    $("#fundoGame").append("<div id='placar'></div>");
-    $("#fundoGame").append("<div id='energia'></div>");
+     	$("#fundoGame").append("<div id='placar'></div>");
+    	$("#fundoGame").append("<div id='energia'></div>");
 
     //Principais variáveis do jogo
 	
@@ -64,33 +64,33 @@ function start() { // Inicio da função start()
     
 	movejogador();
 
-    moveinimigo1();
+   	moveinimigo1();
 
-    moveinimigo2();
+    	moveinimigo2();
 
-    moveamigo();
+    	moveamigo();
 
-    colisao();
+    	colisao();
 
-    placar();
+    	placar();
 
-    energia();
+    	energia();
 
 	
 	} // Fim da função loop()
 
 
-    //Função que movimenta o fundo do jogo
+    	//Função que movimenta o fundo do jogo
 	
 	function movefundo() {
 	
         esquerda = parseInt($("#fundoGame").css("background-position"));
         $("#fundoGame").css("background-position",esquerda-1);
         
-    } // fim da função movefundo()
+    	} // fim da função movefundo()
 
 
-    function movejogador() {
+    	function movejogador() {
 	
         if (jogo.pressionou[TECLA.W]) {
                 var topo = parseInt($("#jogador").css("top"));
@@ -112,7 +112,7 @@ function start() { // Inicio da função start()
                 
         if (topo>=434) {	
 	    $("#jogador").css("top",topo-10);        	
-}
+	}
 
         }
             
@@ -140,11 +140,11 @@ function start() { // Inicio da função start()
                     
             }
 
-    } //Fim da função moveinimigo1()
+    	} //Fim da função moveinimigo1()
 
 
-    function moveinimigo2() {
-    posicaoX = parseInt($("#inimigo2").css("left"));
+    	function moveinimigo2() {
+    	posicaoX = parseInt($("#inimigo2").css("left"));
 	$("#inimigo2").css("left",posicaoX-3);
 				
 		if (posicaoX<=0) {
@@ -154,9 +154,9 @@ function start() { // Inicio da função start()
 		}
 
 
-    } // Fim da função moveinimigo2()
+    	} // Fim da função moveinimigo2()
     
-    function moveamigo() {
+    	function moveamigo() {
 	
         posicaoX = parseInt($("#amigo").css("left"));
         $("#amigo").css("left",posicaoX+1);
@@ -167,9 +167,9 @@ function start() { // Inicio da função start()
                             
         }
         
-    } // fim da função moveamigo()
+    	} // fim da função moveamigo()
 
-    function disparo() {
+    	function disparo() {
 	
         if (podeAtirar==true) {
         
@@ -186,9 +186,9 @@ function start() { // Inicio da função start()
         
         var tempoDisparo=window.setInterval(executaDisparo, 30);
         
-    } //Fecha podeAtirar
+    	} //Fecha podeAtirar
      
-    function executaDisparo() {
+    	function executaDisparo() {
         posicaoX = parseInt($("#disparo").css("left"));
         $("#disparo").css("left",posicaoX+15); 
     
@@ -201,12 +201,12 @@ function start() { // Inicio da função start()
                         
         }
 
-    } // Fecha executaDisparo()
+   	 } // Fecha executaDisparo()
 
 
-    } // Fecha disparo()
+   	 } // Fecha disparo()
 
-    function colisao() {
+    	function colisao() {
 
         var colisao1 = ($("#jogador").collision($("#inimigo1")));
         var colisao2 = ($("#jogador").collision($("#inimigo2")));
@@ -312,7 +312,7 @@ function start() { // Inicio da função start()
         //Explosão 1
 
 
-    function explosao1(inimigo1X,inimigo1Y) {
+    	function explosao1(inimigo1X,inimigo1Y) {
 
         somExplosao.play();
 	    $("#fundoGame").append("<div id='explosao1'></div");
@@ -322,7 +322,7 @@ function start() { // Inicio da função start()
 	    div.css("left", inimigo1X);
 	    div.animate({width:200, opacity:0}, "slow");
 	
-	    var tempoExplosao=window.setInterval(removeExplosao, 2500);
+	  var tempoExplosao=window.setInterval(removeExplosao, 2500);
 	
 	function removeExplosao() {
 			
@@ -334,9 +334,9 @@ function start() { // Inicio da função start()
 		
 	    } // Fim da função explosao1()
 
-     //Reposiciona Inimigo2
+    	 //Reposiciona Inimigo2
 	
-	    function reposicionaInimigo2() {
+	function reposicionaInimigo2() {
 	
         var tempoColisao4=window.setInterval(reposiciona4, 5000);
             
@@ -350,7 +350,7 @@ function start() { // Inicio da função start()
                 
         }
                 
-    }	
+   	}	
 }
   
     //Explosão2
